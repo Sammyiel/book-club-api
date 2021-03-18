@@ -8,7 +8,7 @@ dotenv.config();
 //Add a User
 export async function addUser(req, res) {
     try {
-        bcrypt.hash(req.body.password, 10).then(async (hash) => {
+        bcrypt.hash(req.body.password, 10).then(async(hash) => {
             let userObj = {
                 email_address: req.body.email_address,
                 password: hash,
@@ -28,7 +28,6 @@ export async function addUser(req, res) {
                 })
             }
         });
-
     } catch (err) {
         console.log(err);
         res.status(500).json({
